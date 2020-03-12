@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.smartsecurity.mapper.CompanyBaseInfoMapper">
+  <resultMap id="BaseResultMap" type="com.st.smartsecurity.pojo.po.CompanyBaseInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_user_id" jdbcType="BIGINT" property="companyUserId" />
+    <result column="is_record" jdbcType="INTEGER" property="isRecord" />
+    <result column="operate_com" jdbcType="VARCHAR" property="operateCom" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="oper_name" jdbcType="VARCHAR" property="operName" />
+    <result column="regist_capi" jdbcType="VARCHAR" property="registCapi" />
+    <result column="start_date" jdbcType="TIMESTAMP" property="startDate" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="econKind" jdbcType="VARCHAR" property="econkind" />
+    <result column="ai_percent" jdbcType="VARCHAR" property="aiPercent" />
+    <result column="tec_layer" jdbcType="VARCHAR" property="tecLayer" />
+    <result column="short_info" jdbcType="VARCHAR" property="shortInfo" />
+    <result column="business" jdbcType="VARCHAR" property="business" />
+    <result column="ai_business" jdbcType="VARCHAR" property="aiBusiness" />
+    <result column="patent" jdbcType="INTEGER" property="patent" />
+    <result column="patent_name" jdbcType="VARCHAR" property="patentName" />
+    <result column="project_contents" jdbcType="VARCHAR" property="projectContents" />
+    <result column="elements" jdbcType="VARCHAR" property="elements" />
+    <result column="classification" jdbcType="VARCHAR" property="classification" />
+    <result column="project" jdbcType="VARCHAR" property="project" />
+    <result column="field" jdbcType="VARCHAR" property="field" />
+    <result column="count_income" jdbcType="VARCHAR" property="countIncome" />
+    <result column="countpro_fits" jdbcType="VARCHAR" property="countproFits" />
+    <result column="profits" jdbcType="VARCHAR" property="profits" />
+    <result column="incomes_percent" jdbcType="VARCHAR" property="incomesPercent" />
+    <result column="tax" jdbcType="VARCHAR" property="tax" />
+    <result column="worker_count" jdbcType="INTEGER" property="workerCount" />
+    <result column="development_count" jdbcType="INTEGER" property="developmentCount" />
+    <result column="investment" jdbcType="VARCHAR" property="investment" />
+    <result column="incoming_batches" jdbcType="VARCHAR" property="incomingBatches" />
+    <result column="development_percent" jdbcType="VARCHAR" property="developmentPercent" />
+    <result column="state" jdbcType="CHAR" property="state" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="park" jdbcType="VARCHAR" property="park" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.smartsecurity.mapper.SceneDataMapper">
+  <resultMap id="BaseResultMap" type="com.st.smartsecurity.pojo.po.SceneData">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="changjing" jdbcType="INTEGER" property="changjing" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="business" jdbcType="VARCHAR" property="business" />
+    <result column="coordinates" jdbcType="INTEGER" property="coordinates" />
+  </resultMap>
+</mapper>

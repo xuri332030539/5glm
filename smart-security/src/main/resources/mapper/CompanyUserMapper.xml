@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.smartsecurity.mapper.CompanyUserMapper">
+  <resultMap id="BaseResultMap" type="com.st.smartsecurity.pojo.po.CompanyUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="com_name" jdbcType="VARCHAR" property="comName" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="com_code" jdbcType="VARCHAR" property="comCode" />
+    <result column="state" jdbcType="CHAR" property="state" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="version_date" jdbcType="TIMESTAMP" property="versionDate" />
+    <result column="com_type" jdbcType="BIGINT" property="comType" />
+  </resultMap>
+</mapper>
