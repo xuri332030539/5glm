@@ -71,7 +71,7 @@ public class QichachaServiceImpl implements QichachaService {
             companyMapper.updateByPrimaryKey(company);
             retCompany = company;
         }
-        if (companies.size()==1){
+        if (companies.size()!=1&&companies.size()!=0){
             System.out.println("存在该数据，直接返回");
             retCompany = companies.get(0);
         }
@@ -105,7 +105,7 @@ public class QichachaServiceImpl implements QichachaService {
         return company.getPatentCount();
     }
 
-//    type 句容   elements 南京字段
+    //    type 句容   elements 南京字段
     @Override
     public JSONArray getCompanyList(String type, String elements) {
         JSONArray retJson = new JSONArray();
@@ -181,6 +181,6 @@ public class QichachaServiceImpl implements QichachaService {
                 retJson.add(jsonObject);
             }
         }
-    return retJson;
+        return retJson;
     }
 }
