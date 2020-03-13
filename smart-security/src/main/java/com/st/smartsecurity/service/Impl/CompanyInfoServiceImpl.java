@@ -131,6 +131,7 @@ public class CompanyInfoServiceImpl implements CompanyInfoService {
     public List<CompanySceneDTO> listCompanyScene(long companyId) {
         CompanyScene companyScene = new CompanyScene();
         companyScene.setCompanyId(companyId);
+        companyScene.setState(OftenConstant.NORMAL_STATE);
         List<CompanyScene> companySceneList = companySceneMapper.select(companyScene);
         List<CompanySceneDTO> companySceneDTOList = Lists.newArrayList();
         for (CompanyScene scene:companySceneList) {
