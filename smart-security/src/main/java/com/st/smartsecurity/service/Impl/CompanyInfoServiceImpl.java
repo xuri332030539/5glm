@@ -249,4 +249,12 @@ public class CompanyInfoServiceImpl implements CompanyInfoService {
         }
         return companyUserDTOList;
     }
+
+    @Override
+    public void deleteCompanyScene(long companySceneId) {
+        CompanyScene companyScene = new CompanyScene();
+        companyScene.setState(OftenConstant.DELETE_STATE);
+        companyScene.setSceneId(companySceneId);
+        companySceneMapper.updateByPrimaryKeySelective(companyScene);
+    }
 }

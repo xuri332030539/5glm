@@ -71,7 +71,7 @@ public class QichachaServiceImpl implements QichachaService {
             companyMapper.updateByPrimaryKey(company);
             retCompany = company;
         }
-        if (companies.size()!=1&&companies.size()!=0){
+        if (companies.size()>=1){
             System.out.println("存在该数据，直接返回");
             retCompany = companies.get(0);
         }

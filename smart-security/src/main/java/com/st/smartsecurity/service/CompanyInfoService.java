@@ -81,4 +81,11 @@ public interface CompanyInfoService {
      * @return
      */
     List<CompanyUserDTO> listCompanyBySceneKey(String sceneKey);
+
+    /**
+     * 删除场景
+     * @param companySceneId
+     * @return
+     */
+    void deleteCompanyScene(long companySceneId);
 }

@@ -107,4 +107,12 @@ public class CompanyInfoController {
         Preconditions.checkArgument(key != null, "关键字不可为空");
         return BaseResponse.success(companyInfoService.listCompanyBySceneKey(key));
     }
+
+    @PostMapping("deleteCompanyScene")
+    @ApiOperation(value = "场景删除")
+    @PassToken
+    public BaseResponse deleteCompanyScene(long companySceneId){
+        companyInfoService.deleteCompanyScene(companySceneId);
+        return BaseResponse.success();
+    }
 }
