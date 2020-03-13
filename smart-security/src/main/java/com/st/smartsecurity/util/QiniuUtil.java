@@ -64,7 +64,8 @@ public class QiniuUtil {
 
             logger.info("{七牛图片上传key: "+ putRet.key+",七牛图片上传hash: "+ putRet.hash+"}");
 
-            result = "qiniu.iwooke.com/"+putRet.key;
+            result = "q3vbt7rr5.bkt.clouddn.com/"+putRet.key;
+//            result = "qiniu.iwooke.com"+putRet.key;
         } catch (QiniuException ex) {
             Response r = ex.response;
             System.err.println(r.toString());
