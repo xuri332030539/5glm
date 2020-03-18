@@ -20,7 +20,7 @@ public class CompanySceneVO {
 
     /**
      * 场景分类
-     1-智慧交通;2-智能制造;3-智慧城市;4-智慧医疗
+     1-智慧交通;2-智能制造;3-智慧城市;4-疫情防控
      */
     @ApiModelProperty(value = "场景分类")
     private String sceneClassification;

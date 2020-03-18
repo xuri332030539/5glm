@@ -50,7 +50,7 @@ public interface CompanyInfoService {
     List<CompanySceneDTO> listCompanyScene(long companyId);
 
     /**
-     * 获取所有公司场景列表
+     * 获取公司场景列表
      * @return
      */
     List<CompanySceneDTO> listAllCompanyScene(String type);
