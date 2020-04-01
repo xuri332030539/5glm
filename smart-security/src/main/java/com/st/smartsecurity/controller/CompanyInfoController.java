@@ -11,6 +11,7 @@ import com.st.smartsecurity.service.CompanyInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -114,5 +115,13 @@ public class CompanyInfoController {
     public BaseResponse deleteCompanyScene(long companySceneId){
         companyInfoService.deleteCompanyScene(companySceneId);
         return BaseResponse.success();
+    }
+
+    @PostMapping("listSceneByName")
+    @ApiOperation(value = "通过场景名称查询场景")
+    @PassToken
+    public BaseResponse listSceneByName(String sceneName){
+        Preconditions.checkArgument(!StringUtils.isEmpty(sceneName), "查询场景名称不可为空");
+        return BaseResponse.success(companyInfoService.listSceneByName(sceneName));
     }
 }

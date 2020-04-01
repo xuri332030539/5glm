@@ -56,6 +56,13 @@ public interface CompanyInfoService {
     List<CompanySceneDTO> listAllCompanyScene(String type);
 
     /**
+     * 通过场景名称查询场景
+     * @param sceneName
+     * @return
+     */
+    List<CompanySceneDTO> listSceneByName(String sceneName);
+
+    /**
      * 公司列表
      * @return
      */

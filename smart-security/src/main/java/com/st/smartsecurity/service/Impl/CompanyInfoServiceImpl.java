@@ -156,6 +156,19 @@ public class CompanyInfoServiceImpl implements CompanyInfoService {
     }
 
     @Override
+    public List<CompanySceneDTO> listSceneByName(String sceneName) {
+        Example example = new Example(CompanyScene.class);
+        example.createCriteria().andLike("scene","%"+sceneName+"%").andEqualTo("state",OftenConstant.NORMAL_STATE);
+        List<CompanyScene> companySceneList = companySceneMapper.selectByExample(example);
+        List<CompanySceneDTO> companySceneDTOList = Lists.newArrayList();
+        for (CompanyScene companyScene : companySceneList) {
+            CompanySceneDTO companySceneDTO = BeanUtil.copyProperties(companyScene,CompanySceneDTO.class);
+            companySceneDTOList.add(companySceneDTO);
+        }
+        return companySceneDTOList;
+    }
+
+    @Override
     public PageInfo listCompany(CompanyParamsVO companyParamsVO) {
         Example example = new Example(CompanyUser.class);
         example.createCriteria().andNotEqualTo("state","D");
