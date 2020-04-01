@@ -145,6 +145,7 @@ public class CompanyInfoServiceImpl implements CompanyInfoService {
     public List<CompanySceneDTO> listAllCompanyScene(String type) {
         CompanyScene companyScene = new CompanyScene();
         companyScene.setSceneClassification(type);
+        companyScene.setState(OftenConstant.NORMAL_STATE);
         List<CompanyScene> companySceneList = companySceneMapper.select(companyScene);
         List<CompanySceneDTO> companySceneDTOList = Lists.newArrayList();
         for (CompanyScene scene:companySceneList) {
