@@ -11,7 +11,6 @@ import com.st.smartsecurity.pojo.po.JsCysttCity;
 import com.st.smartsecurity.pojo.po.JsCysttCityCompany;
 import com.st.smartsecurity.pojo.po.SceneData;
 import com.st.smartsecurity.service.CityCompanyService;
-import javafx.scene.Scene;
 import org.springframework.stereotype.Service;
 import springfox.documentation.spring.web.json.Json;
 import tk.mybatis.mapper.entity.Example;
@@ -42,26 +41,42 @@ public class CityCompanyServiceImpl implements CityCompanyService {
             Example example1 = new Example(JsCysttCityCompany.class);
             JSONObject jsonObject = new JSONObject();
             Example.Criteria criteria = example1.createCriteria();
-            if (!elements.equals("全部")){
-                criteria.andLike("elements", "%"+elements+"%");
+            if (elements.equals("上游产业链")){
+                criteria.orLike("elements", "%"+"算法"+"%");
+                criteria.orLike("elements", "%"+"芯片"+"%");
             }
-            criteria.andEqualTo("jsCityId", jsCysttCity.getId());
+            if (elements.equals("中游产业链")){
+                criteria.orLike("elements", "%"+"模块"+"%");
+                criteria.orLike("elements", "%"+"终端"+"%");
+            }
+            if (elements.equals("下游产业链")){
+                criteria.orLike("elements", "%"+"系统"+"%");
+                criteria.orLike("elements", "%"+"网络"+"%");
+                criteria.orLike("elements", "%"+"平台"+"%");
+            }
+//            criteria.andEqualTo("jsCityId", jsCysttCity.getId());
             List<JsCysttCityCompany> companyList =  jsCysttCityCompanyMapper.selectByExample(example1);
             if (companyList.size()==0){
                 continue;
+            }
+            List<JsCysttCityCompany> list = new ArrayList<>();
+            for (JsCysttCityCompany jsCysttCityCompany:companyList){
+                if (jsCysttCityCompany.getJsCityId()==jsCysttCity.getId()){
+                    list.add(jsCysttCityCompany);
+                }
             }
             //type
             jsonObject.put("type","Feature");
             //properties
             JSONObject properties = new JSONObject();
             properties.put("id",jsCysttCity.getName());
-            properties.put("mag",companyList.size());
+            properties.put("mag",list.size());
             properties.put("time","1507425650893");
             properties.put("tsunami",0);
             properties.put("felt","null");
             //test
             JSONArray jsonArray = new JSONArray();
-            for (JsCysttCityCompany jsCysttCityCompany : companyList){
+            for (JsCysttCityCompany jsCysttCityCompany : list){
                 jsonArray.add(JSONObject.parseObject(jsCysttCityCompany.getContent()));
             }
             properties.put("test",jsonArray);

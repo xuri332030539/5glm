@@ -42,7 +42,7 @@ public class QichachaController {
     }
 
     @PostMapping("getCompanyList")
-    @ApiOperation(value = "getCompanyList")
+    @ApiOperation(value = "获取公司列表")
     @PassToken
     public BaseResponse getCompanyList(String type,String elements){
         return BaseResponse.success(qichachaService.getCompanyList(type,elements));
