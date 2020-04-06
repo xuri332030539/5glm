@@ -26,6 +26,13 @@ public class CityCompanyController {
         return BaseResponse.success(cityCompanyService.getCityByElements(elements));
     }
 
+    @PostMapping("getCompanyByElements")
+    @ApiOperation("根据elements获取公司")
+    @PassToken
+    public BaseResponse getCompanyByElements(String elements) {
+        return BaseResponse.success(cityCompanyService.getCompanyByElements(elements));
+    }
+
     @PostMapping("getCompanyByScene")
     @ApiOperation("根据场景获取公司信息")
     @PassToken

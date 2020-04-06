@@ -7,4 +7,7 @@ public interface CityCompanyService {
     JSONArray getCityByElements(String elements);
 
     JSONArray getCompanyByScene(int scene);
+
+    JSONArray getCompanyByElements(String elements);
+
 }
