@@ -20,7 +20,7 @@ public class CityCompanyController {
     CityCompanyService cityCompanyService;
 
     @PostMapping("getCityByElements")
-    @ApiOperation("根据elements获取公司")
+    @ApiOperation("根据生态链获取公司")
     @PassToken
     public BaseResponse getCityByElements(String elements){
         return BaseResponse.success(cityCompanyService.getCityByElements(elements));
